@@ -11,8 +11,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 
 /**
@@ -79,7 +77,7 @@ public class Tutorial {
         this.chapter = chapter;
     }
     
-    public void initMetadata()
+    public boolean initMetadata()
     {
         try {
             ObjectMapper mapper = new ObjectMapper();
@@ -133,8 +131,9 @@ public class Tutorial {
                     this.chapter=c;
                 }
             }
+            return true;
         } catch (IOException ex) {
-            ex.printStackTrace();
+            return false;
         }
     }
 

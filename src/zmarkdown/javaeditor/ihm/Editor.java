@@ -6,6 +6,7 @@
 
 package zmarkdown.javaeditor.ihm;
 
+import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -16,6 +17,7 @@ import java.util.Map;
 import java.util.Scanner;
 import javax.swing.BorderFactory;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
@@ -123,18 +125,21 @@ public class Editor extends javax.swing.JFrame{
             if (component instanceof JSplitPane){
                 JSplitPane split = (JSplitPane) component;
                 for (Component spcomp:split.getComponents()) {
-                    if (spcomp instanceof JScrollPane){
-                        JScrollPane scroll = (JScrollPane) spcomp;
-                        JViewport pack = scroll.getViewport();
-                        for (Component sp:pack.getComponents()) {
-                            if (sp instanceof Source){
-                                Source source = (Source) sp;
-                                source.saveFile();
+                    if (spcomp instanceof JPanel){
+                        JPanel globe = (JPanel) spcomp;
+                        for (Component gb:globe.getComponents()) {
+                            if (gb instanceof JScrollPane){
+                                JScrollPane scroll = (JScrollPane) gb;
+                                JViewport pack = scroll.getViewport();
+                                for (Component sp:pack.getComponents()) {
+                                    if (sp instanceof Source){
+                                        Source source = (Source) sp;
+                                        source.saveFile();
+                                    }
+                                }
                             }
                         }
                     }
-                    
-                    
                 }
             }
         }
@@ -146,10 +151,13 @@ public class Editor extends javax.swing.JFrame{
         String path = tutorial.getPath()+File.separator+mappingRowFile.get(node);
         JSplitPane spliter = new JSplitPane();
         spliter.setResizeWeight(.5d);
-        JScrollPane scrollLeft = new JScrollPane();
-        scrollLeft.setBorder(BorderFactory.createTitledBorder(BorderFactory.createTitledBorder("Texte de zMarkdown")));
+        JScrollPane scrollLeft = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollLeft.setBorder(BorderFactory.createTitledBorder(BorderFactory.createTitledBorder("Texte zMarkdown")));
 
         Source textarea = new Source(path);
+        textarea.setLineWrap(true);
+        HelpBox help=new HelpBox(textarea);
+        
         scrollLeft.setViewportView(textarea);
         JScrollPane scrollRight = new JScrollPane();
         scrollRight.setBorder(BorderFactory.createTitledBorder(BorderFactory.createTitledBorder("Rendu Final")));
@@ -158,8 +166,12 @@ public class Editor extends javax.swing.JFrame{
         textarea.register(textpane);
         textpane.setObservable(textarea);
         scrollRight.setViewportView(textpane);
-
-        spliter.setLeftComponent(scrollLeft);
+        
+        JPanel globe=new JPanel();
+        globe.setLayout(new BorderLayout());
+        globe.add(help, BorderLayout.NORTH);
+        globe.add(scrollLeft, BorderLayout.CENTER);
+        spliter.setLeftComponent(globe);
         spliter.setRightComponent(scrollRight);
         
         panel.add(spliter, java.awt.BorderLayout.CENTER);
@@ -278,8 +290,13 @@ public class Editor extends javax.swing.JFrame{
 	if (dialog.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 	    File file = dialog.getSelectedFile();
             tutorial = new Tutorial(file.getAbsolutePath());
-            tutorial.initMetadata();
-            actualiseTree();
+            boolean check=tutorial.initMetadata();
+            if (!check) { 
+                new JOptionPane().showMessageDialog(this, "Désolé, vous avez sélectionner le répertoire \""+file.getAbsolutePath()+"\", \nIl ne contient pas de tutoriel Zeste de Savoir. Veuillez sélectionner la racine du répertoire du tutoriel pour pouvoir l'éditer.\n Merci",  "Mauvais répertoire sélectionné", JOptionPane.ERROR_MESSAGE);
+            }
+            else {
+                actualiseTree();
+            }
 	}
     }//GEN-LAST:event_menuOpenActionPerformed
 
