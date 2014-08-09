@@ -1,7 +1,7 @@
 zMarkdown-Editor
 ================
 
-Un éditeur **Hors ligne** pour les tutoriels de Zeste De Savoir.
+Un éditeur **Hors ligne** et multiplateforme pour les tutoriels de Zeste De Savoir.
 
 ### Fonctionnalités
 
@@ -14,12 +14,16 @@ Un éditeur **Hors ligne** pour les tutoriels de Zeste De Savoir.
  - Python 2.7
  - Java 1.6 et plus
 
+
 ### Utilisation
 
 Pour lancer l'application, allez dans le dossier dist du projet et :
 
 - Sur Windows : lancez `run.bat`
 - Sur Linux/MacOs : lancez `run.sh`
+
+![](http://zestedesavoir.com/media/galleries/817/81909c77-21c8-44fd-a832-458d4cfa414d.png)
+![](http://zestedesavoir.com/media/galleries/817/580475cd-cf19-4b66-ab11-217129343161.png)
 
 Ensuite pour découvrir,
 - Télécharger l'archive d'un tutoriel en ligne sur [zestedesavoir](http://zestedesavoir.com), en allant sur le tutoriel en question, et dans la barre de gauche en bas, vous avez un lien "Archive".
