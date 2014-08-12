@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Zmarkdown-editor by firm1</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Zmarkdown-editor</h1>
+        <h2>Un éditeur Hors ligne pour les tutoriels de Zeste De Savoir</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/firm1/zmarkdown-editor/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/firm1/zmarkdown-editor/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/firm1/zmarkdown-editor" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="zmarkdown-editor" class="anchor" href="#zmarkdown-editor"><span class="octicon octicon-link"></span></a>zMarkdown-Editor</h1>
+
+<p>Un éditeur <strong>Hors ligne</strong> et multiplateforme pour les tutoriels de Zeste De Savoir.</p>
+
+<h3>
+<a name="fonctionnalit%C3%A9s" class="anchor" href="#fonctionnalit%C3%A9s"><span class="octicon octicon-link"></span></a>Fonctionnalités</h3>
+
+<ul>
+<li>Navigation dans la structure d'un tutoriel (big ou mini)</li>
+<li>Edition avec prévisualisation instantanée du rendu markdown</li>
+<li>Support de la syntaxe <a href="https://github.com/zestedesavoir/Python-ZMarkdown">zMarkdown</a>
+</li>
+<li>Style du site ZesteDeSavoir</li>
+</ul><h3>
+<a name="d%C3%A9pendances-logicielles" class="anchor" href="#d%C3%A9pendances-logicielles"><span class="octicon octicon-link"></span></a>Dépendances logicielles</h3>
+
+<ul>
+<li>Python 2.7</li>
+<li>Java 1.6 et plus</li>
+</ul><h3>
+<a name="utilisation" class="anchor" href="#utilisation"><span class="octicon octicon-link"></span></a>Utilisation</h3>
+
+<p>Pour lancer l'application, allez dans le dossier dist du projet et :</p>
+
+<ul>
+<li>Sur Windows : lancez <code>run.bat</code>
+</li>
+<li>Sur Linux/MacOs : lancez <code>run.sh</code>
+</li>
+</ul><p><img src="http://zestedesavoir.com/media/galleries/817/81909c77-21c8-44fd-a832-458d4cfa414d.png" alt=""><img src="http://zestedesavoir.com/media/galleries/817/580475cd-cf19-4b66-ab11-217129343161.png" alt=""></p>
+
+<p>Ensuite pour découvrir,</p>
+
+<ul>
+<li>Télécharger l'archive d'un tutoriel en ligne sur <a href="http://zestedesavoir.com">zestedesavoir</a>, en allant sur le tutoriel en question, et dans la barre de gauche en bas, vous avez un lien "Archive".</li>
+<li>Dézippez l'archive que vous venez de télécharger</li>
+<li>Allez sur l'application et faites <code>Fichier</code> -&gt; <code>Ouvrir</code> , puis sélectionnez le répertoire de votre tutoriel</li>
+<li>Vous voilà maintenant capable de parcourir votre document.</li>
+</ul><h3>
+<a name="developpement" class="anchor" href="#developpement"><span class="octicon octicon-link"></span></a>Developpement</h3>
+
+<p>Le programme est réalisé essentiellement en langage Java, il s'appuie sur la bibliothèque Jython pour faire appel au parseur zMarkdown utilisé pour le site internet, pour éviter de le réecrire. L'avantage est donc que zMarkdown-Editor pourra bénéficier des mises à jour du dépot <a href="https://github.com/zestedesavoir/Python-ZMarkdown">zMarkdown</a> automatiquement.</p>
+
+<p>La partie interface est basé sur la bibliothèque <strong>Swing</strong> appelant le look and feel natif de votre système d'exploitation. On utilise aussi le <em>Pattern Observer</em> pour réaliser les mises à jour d'interface.</p>
+
+<p>Bonne découverte.</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
