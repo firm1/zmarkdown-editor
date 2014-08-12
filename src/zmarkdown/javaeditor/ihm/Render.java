@@ -6,8 +6,13 @@
 
 package zmarkdown.javaeditor.ihm;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTextPane;
 import javax.swing.text.Document;
+import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
 import zmarkdown.javaeditor.EMarkdown;
@@ -24,11 +29,18 @@ public class Render extends JTextPane implements Observer{
      
     public Render(EMarkdown md){
         this.setEditable(false);
+        this.setContentType("text/html;charset=UTF-8");
         HTMLEditorKit kit = new HTMLEditorKit();
         this.setEditorKit(kit);
         StyleSheet styleSheet = kit.getStyleSheet();
         loadStyle(styleSheet);
-        Document doc = kit.createDefaultDocument();
+        
+        HTMLDocument doc = (HTMLDocument)kit.createDefaultDocument();
+        try {
+            ((HTMLDocument)doc).setBase(new URL("http://zestedesavoir.com"));
+        } catch (MalformedURLException ex) {
+            ex.printStackTrace();
+        }
         this.setDocument(doc);
         this.md = md;
     }
