@@ -7,6 +7,7 @@
 package zmarkdown.javaeditor.ihm;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.BufferedWriter;
@@ -23,24 +24,26 @@ import javax.swing.event.DocumentListener;
 import zmarkdown.javaeditor.pattern.Observable;
 import zmarkdown.javaeditor.pattern.Observer;
 
-/**
- *
- * @author firm1
- */
-public class Source extends JTextArea implements Observable{
+
+public class Source extends JTextArea implements Observable, Observer{
     
     private List<Observer> observers;
     private String message;
     private boolean changed;
     private final Object MUTEX= new Object();
     private String path;
+    private Font fonte;
+    private Observable menu;
+    private Color foreground;
+    private Color background;
 
-    public Source(String path) {
-        this.setForeground(Color.GRAY);
-        this.setBackground(Color.BLACK);
-        this.setCaretColor(Color.WHITE);
+    public Source(String path, Font fonte, Color foreground, Color background) {
+        this.setForeground(foreground);
+        this.setBackground(background);
         this.observers=new ArrayList<Observer>();
         this.path=path;
+        this.fonte = fonte;
+        this.setFont(fonte);
         
         this.getDocument().addDocumentListener( new DocumentListener() {
 
@@ -67,6 +70,7 @@ public class Source extends JTextArea implements Observable{
         });
     }
 
+    
     public String getPath() {
         return path;
     }
@@ -114,9 +118,45 @@ public class Source extends JTextArea implements Observable{
         }
  
     }
+
+    public Color getForeground() {
+        return foreground;
+    }
+    
+    public void setForeground(Color foreground) {
+        this.foreground = foreground;
+    }
+    
+    public Color getBackground() {
+        return background;
+    }
+    
+    public void setBackground(Color background) {
+        this.background = background;
+    }
+    
+    public Font getFonte() {
+        return fonte;
+    }
+
+    public void setFonte(Font fonte) {
+        this.fonte = fonte;
+    }
  
     @Override
     public Object getUpdate() {
         return this.getText();
+    }
+
+    @Override
+    public void update() {
+        if (fonte!=null) {
+            this.setFont(fonte);
+        }
+    }
+
+    @Override
+    public void setObservable(Observable sub) {
+        this.menu=sub;
     }
 }

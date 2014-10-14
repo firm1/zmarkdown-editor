@@ -44,6 +44,8 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator3">
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuQuit">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
@@ -57,11 +59,121 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Affichage"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Police"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <Menu class="javax.swing.JMenu" name="jMenu2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Couleurs"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Texte"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Fond"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="jMenu4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Look and Feel"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Syst&#xe8;me d&apos;exploitation"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem6ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Sea Glass"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem7ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jGoodies"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem5ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <Menu class="javax.swing.JMenu" name="jMenu5">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jTattoo"/>
+                  </Properties>
+                  <SubComponents>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Aero"/>
+                      </Properties>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem10">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Windows"/>
+                      </Properties>
+                    </MenuItem>
+                  </SubComponents>
+                </Menu>
+              </SubComponents>
+            </Menu>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="En ligne"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
+              <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+D"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="T&#xe9;l&#xe9;charger une archive"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem8ActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Aide"/>
+          </Properties>
+        </Menu>
       </SubComponents>
     </Menu>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Zest&apos;Editor"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
@@ -78,7 +190,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,86,0,0,2,7"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-117,0,0,2,-102"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
@@ -92,6 +204,56 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel1">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Acceuil">
+                <Property name="tabTitle" type="java.lang.String" value="Acceuil"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="Center"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JEditorPane" name="jEditorPane1">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="contentType" type="java.lang.String" value="text/html" noResource="true"/>
+                    <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;&#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;  &lt;table style=&quot;padding:10px;&quot;&gt;&#xa;  &lt;tr&gt;&#xa;  &lt;td valign=&quot;top&quot; &gt;&#xa;   &lt;h1&gt;Zest&apos;Editor&lt;/h1&gt;&#xa;   &lt;h2&gt;R&#xe9;digez vos documents en zMarkdown&lt;/h2&gt;&#xa;   &lt;p&gt;&#xa;Zest&apos;Editor est un outil de r&#xe9;daction, qui permet de r&#xe9;diger un texte en zMarkdown et d&apos;avoir un aper&#xe7;u &lt;strong&gt;en temps r&#xe9;el&lt;/strong&gt; de vos modifications. Les fonctionnalit&#xe9;s principales offertes par Zest&apos;Editor sont les suivantes :&#xa;&lt;ul&gt;&#xa;&lt;li&gt;La r&#xe9;daction de vos tutoriels en &lt;strong&gt;hors ligne&lt;/strong&gt;, c&apos;est &#xe0; dire sans avoir besoin d&apos;une connexion internet&lt;/li&gt;&#xa;&lt;li&gt;Le support de la syntaxe &lt;a href=&quot;http://zestedesavoir.com/tutoriels/221/rediger-sur-zds/&quot;&gt;zMarkdown&lt;/a&gt;&lt;/li&gt;&#xa;&lt;li&gt;La pr&#xe9;visualisation instantan&#xe9;e des modifications du texte&lt;/li&gt;&#xa;&lt;li&gt;La navigation dans le sommaire d&apos;un tutoriel sous forme d&apos;arbre&lt;/li&gt;&#xa;&lt;li&gt;La personnalisation de l&apos;&#xe9;diteur selon vos gouts(police d&apos;&#xe9;criture, couleur de texte, couleur de fond, look and feel)&lt;/li&gt;&#xa;&lt;li&gt;Les boutons d&apos;aide &#xe0; la r&#xe9;daction (gras, italique, listes, touches, etc.)&lt;/li&gt;&#xa;&lt;li&gt;Le t&#xe9;l&#xe9;chargement des archives des tutoriels publi&#xe9;s&lt;/li&gt;&#xa;&lt;/ul&gt;&#xa;   &lt;/p&gt;&#xa;&lt;p&gt;&#xa;Zest&apos;Editor met &#xe0; votre disposition des raccourcis claviers qui am&#xe9;liorent votre productivit&#xe9; lors de la r&#xe9;daction. Pour plus d&apos;information, veuillez consulter la &lt;a href=&quot;http://zestedesavoir.com/forums/sujet/1003/editeur-offline-pour-les-tutoriels-de-zds/&quot;&gt;fiche de pr&#xe9;sentation du projet&lt;/a&gt; en ligne.&#xa;&lt;/p&gt;&#xa;  &lt;/td&gt;&#xa;  &lt;td style=&quot;width:33%&quot; valign=&quot;top&quot;&gt;&#xa;   &lt;h1&gt;OpenSource&lt;/h1&gt;&#xa;   &lt;h2&gt;Zest&apos;Editor enti&#xe8;rement libre&lt;/h2&gt;&#xa;   &lt;p&gt;&#xa;   Zest&apos;Editor est un logiciel sous licence &lt;i&gt;Open Source&lt;/i&gt;. Ce qui signifie que tout le monde peux consulter, modifier et r&#xe9;utiliser son code source qui est sous &lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;licence MIT&lt;/a&gt;.&#xa;   &lt;/p&gt;&#xa;&lt;img src=&quot;http://zestedesavoir.com/media/galleries/817/f02587cc-1803-4319-a95b-a6a1449b7798.png&quot; /&gt;&#xa;&lt;p&gt;&#xa;Ce dernier est h&#xe9;berg&#xe9; et versionn&#xe9; sur la plateforme GitHub en tant que d&#xe9;pot git via &lt;a href=&quot;https://github.com/firm1/zmarkdown-editor&quot;&gt;ce lien&lt;/a&gt;&#xa;&lt;/p&gt;&#xa;&lt;p&gt;&#xa;Le code est &#xe9;crit essentiellement en langage Java, il s&apos;appuie sur la biblioth&#xe8;que Jython pour faire appel au parseur zMarkdown utilis&#xe9; pour le site internet, pour &#xe9;viter la r&#xe9;ecriture de celui-ci. L&apos;avantage est donc que Zest&apos;Editor pourra b&#xe9;n&#xe9;ficier des mises &#xe0; jour du d&#xe9;pot &lt;a href=&quot;https://github.com/zestedesavoir/Python-ZMarkdown&quot;&gt;zMarkdown&lt;/a&gt; automatiquement.&#xa;&lt;/p&gt;&#xa;  &lt;/td&gt;&#xa;  &lt;td style=&quot;width:33%&quot; valign=&quot;top&quot;&gt;&#xa;   &lt;h1&gt;Zeste de Savoir&lt;/h1&gt;&#xa;   &lt;h2&gt;Partagez vos connaissances&lt;/h2&gt;&#xa;   &lt;p&gt;&#xa;   Zeste de Savoir est un site internet qui vous permets de partager vos connaissances. Vous pourre y trouver des tutoriels et de tous les niveaux, des articles ainsi qu&apos;un forum d&apos;entraide anim&#xe9;s par et pour la communaut&#xe9;.&#xa;   &lt;/p&gt;&#xa;&lt;p&gt;&#xa;Tous les membres peuvent &#xe9;crire et publier du contenu (articles, tutoriels) sur le site. Pour assurer la qualit&#xe9; et la p&#xe9;dagogie du contenu, l&apos;&#xe9;quipe du site valide chaque cours avant publication.&#xa;&lt;/p&gt;&#xa;&lt;br /&gt;&#xa;   &lt;p&gt;&#xa;&lt;img src=&quot;http://zestedesavoir.com/media/galleries/817/16f9ec90-e7ac-4cde-9d95-d4eed1cb9f19.png&quot;/&gt;&#xa;   &lt;/p&gt;&#xa;  &lt;/td&gt;&#xa;  &lt;/tr&gt;&#xa;  &lt;/table&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;&#xa;"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.Box$Filler" name="filler1">
+              <Properties>
+                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[32767, 32767]"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.Glue"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="After"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -100,8 +262,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Fichiers">
-                <Property name="tabTitle" type="java.lang.String" value="Fichiers"/>
+              <JTabbedPaneConstraints tabName="Tutoriel">
+                <Property name="tabTitle" type="java.lang.String" value="Tutoriel"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
