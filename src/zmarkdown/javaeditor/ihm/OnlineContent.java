@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
+import java.util.zip.ZipFile;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -19,6 +20,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import zmarkdown.utils.ZipFileUtil;
 
 /**
  *
@@ -111,6 +113,7 @@ public class OnlineContent extends javax.swing.JDialog {
 	dialog.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 	if (dialog.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 	    File file = dialog.getSelectedFile();
+            String ph = file.getAbsolutePath() + File.separator + makeSlug(jList1.getSelectedValue().toString());
             try {
                 Element elt = mappingTuto.get(jList1.getSelectedIndex());
                 String[] parts = elt.select("a").attr("href").split("/");
@@ -118,7 +121,7 @@ public class OnlineContent extends javax.swing.JDialog {
                 URL url = new URL("http://zestedesavoir.com/tutoriels/telecharger/?tutoriel="+id+"&online");
                 URLConnection conn = url.openConnection();
                 InputStream in = conn.getInputStream();
-                FileOutputStream out = new FileOutputStream(file.getAbsolutePath() + File.separator + makeSlug(jList1.getSelectedValue().toString())+".zip");
+                FileOutputStream out = new FileOutputStream(ph+".zip");
                 byte[] b = new byte[1024];
                 int count;
                 while ((count = in.read(b)) >= 0) {
@@ -131,6 +134,17 @@ public class OnlineContent extends javax.swing.JDialog {
             }
             
             JOptionPane.showMessageDialog(this, "Votre tutoriel "+jList1.getSelectedValue().toString()+" a été téléchargé avec succès", "Information", JOptionPane.INFORMATION_MESSAGE);
+            
+            int dialogResult = JOptionPane.showConfirmDialog (this, "Voulez vous décompresser le tutoriel que vous venez de télécharger ?","Décompression ?",JOptionPane.YES_NO_OPTION);
+            if(dialogResult == JOptionPane.YES_OPTION){
+                try {
+                    ZipFileUtil.unzipFileIntoDirectory(new ZipFile(ph+".zip"), new File(ph));
+                    JOptionPane.showMessageDialog(this, "Votre tutoriel "+jList1.getSelectedValue().toString()+" a été décompressé avec succès dans '"+ph+"'", "Information", JOptionPane.INFORMATION_MESSAGE);
+                }catch(Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
 	}
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -5,23 +5,23 @@ Un éditeur **Hors ligne** et multiplateforme pour les tutoriels de Zeste De Sav
 
 ### Fonctionnalités
 
-- Navigation dans la structure d'un tutoriel (big ou mini)
-- Edition avec prévisualisation instantanée du rendu markdown
+- La rédaction de vos tutoriels en <strong>hors ligne</strong>, c'est à dire sans avoir besoin d'une connexion internet
 - Support de la syntaxe [zMarkdown](https://github.com/zestedesavoir/Python-ZMarkdown)
-- Style du site ZesteDeSavoir
+- La prévisualisation instantanée des modifications du texte
+- La navigation dans le sommaire d'un tutoriel sous forme d'arbre
+- La personnalisation de l'éditeur selon vos gouts(police d'écriture, couleur de texte, couleur de fond, look and feel)
+- Les boutons d'aide à la rédaction (gras, italique, listes, touches, etc.)
+- Le téléchargement des archives des tutoriels publiés
 
 ### Dépendances logicielles
- - Python 2.7
  - Java 1.6 et plus
 
 
 ### Utilisation
 
-Pour lancer l'application, allez dans le dossier dist du projet et :
+Pour lancer l'application, allez dans le dossier store du projet et double-cliquez sur `ZestEditor.jar`
 
-- Sur Windows : lancez `run.bat`
-- Sur Linux/MacOs : lancez `run.sh`
-
+![](http://zestedesavoir.com/media/galleries/817/c80d5aa4-a0e0-481e-8e57-9c716beb83b2.png)
 ![](http://zestedesavoir.com/media/galleries/817/81909c77-21c8-44fd-a832-458d4cfa414d.png)
 ![](http://zestedesavoir.com/media/galleries/817/580475cd-cf19-4b66-ab11-217129343161.png)
 

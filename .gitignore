@@ -1,4 +1,5 @@
 #ant specific
+dist/
 build/
 build.xml
 manifest.mf
