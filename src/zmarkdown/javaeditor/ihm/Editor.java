@@ -78,6 +78,7 @@ public class Editor extends javax.swing.JFrame implements Observable{
         menuSave = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         menuQuit = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
@@ -147,6 +148,9 @@ public class Editor extends javax.swing.JFrame implements Observable{
             }
         });
         menuFile.add(jMenuItem1);
+
+        jMenuItem11.setText("Préférences");
+        menuFile.add(jMenuItem11);
         menuFile.add(jSeparator3);
 
         menuQuit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
@@ -585,6 +589,7 @@ public class Editor extends javax.swing.JFrame implements Observable{
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
